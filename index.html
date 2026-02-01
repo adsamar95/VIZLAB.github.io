@@ -135,6 +135,10 @@
         object-fit: contain;
       }
 
+      .overlay {
+        height: 95%;
+      }
+
       .vertical-columns {
         column-count: 2;
       }
@@ -149,7 +153,6 @@
     /* ========================= */
     /* CLIENTS SECTION */
     /* ========================= */
-    
     .clients-section {
       padding: 20px 20px;
       background: #000;
@@ -164,12 +167,6 @@
       margin-bottom: 12px;
 
     }
-    .clients-section3 h3 {
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
 
     .clients-divider {
       display: flex;
@@ -211,7 +208,8 @@
     }
 
     .client-logos img {
-      max-height: 40px;
+      max-height: 50px;
+      filter: grayscale(100%);
       opacity: .85;
       transition: .3s;
     }
@@ -283,11 +281,9 @@
   </section>
 
   <!-- CLIENTS -->
-  <div class="contact-line">
-      <section class="clients-section">
+  <section class="clients-section">
     <h2>Our Clients</h2>
     <div class="clients-divider"><span></span></div>
-    </div>
 
     <div class="client-logos">
       <img src="L1.png">
@@ -299,23 +295,16 @@
     </div>
     <br>
     <div class="contact-line">
-      <section class="clients-section3">
-    <h3>Contact Us</h3>
-    <div class="clients-divider"><span></span></div>
+      <span>"A DECADE OF EXCELLENCE IN ARCHITECTURAL VISUALIZATION"</span>
     </div>
+    <br>
 
-   <center>
-  <span>
-    <i class="fas fa-envelope"></i> contact@thevizlabs.com
-  </span>
-  <br><br>
-  <span>
-    <i class="fas fa-phone"></i> +91 97910 67559
-  </span>
-</center>
 
-<br>
-<br>
+
+    <span><i class="fas fa-envelope"> </i> contact@thevizlabs.com</span>
+    <br>
+    <br>
+    <span><i class="fas fa-phone"> </i> +91 97910 67559</span>
 
     </div>
   </section>
