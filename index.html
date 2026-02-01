@@ -1,274 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VIZLABS</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{background:#000;color:#fff;}
-
-/* HERO */
-.hero{position:relative;height:100vh;overflow:hidden}
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* OVERLAY */
-.overlay{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:flex-end;
-  padding:clamp(18px,4vw,80px);
-  background:rgba(0,0,0,.35);
-}
-
-/* BOTTOM BAR */
-.bottom-bar{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-/* LOGO */
-.logo{
-  font-size:clamp(26px,4vw,45px);
-  letter-spacing:4px;
-  font-weight:300;
-}
-
-/* SOCIAL */
-.social{
-  display:flex;
-  gap:clamp(10px,2vw,18px);
-}
-.social a{
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.3);
-  background:rgba(0,0,0,.5);
-  text-decoration:none;
-  transition:.25s;
-}
-.social a:hover{
-  background:#fff;
-  color:#000;
-  transform:scale(1.1);
-}
-
-/* =============================== */
-/* VERTICAL COLUMN GALLERY         */
-/* =============================== */
-.gallery{
-  padding:clamp(40px,3vw,80px);
-  background:#000;
-}
-
-.vertical-columns {
-  column-count: 3; /* Number of columns */
-  column-gap: 20px; /* Space between columns */
-}
-
-.vertical-columns img {
-  width: 100%;
-  display: block;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  transition: transform .35s ease, filter .25s ease;
-  cursor: pointer;
-}
-
-.vertical-columns img:hover {
-  transform: scale(1.04);
-  filter: brightness(1.1);
-}
-
-/* RESPONSIVE */
-@media(max-width:1200px){
-  .vertical-columns { column-count: 3; }
-}
-@media(max-width:768px){
-  .vertical-columns { column-count: 2; }
-}
-@media(max-width:480px){
-  .vertical-columns { column-count: 1; }
-}
-
-/* ========================= */
-/* CLIENTS SECTION */
-/* ========================= */
-.clients-section{
-  padding:20px 20px;
-  background:#000;
-  text-align:center;
-  letter-spacing:1px;
-}
-
-.clients-section h2{
-  font-size:28px;
-  font-weight:300;
-  letter-spacing: 2px;
-  margin-bottom:12px;
- 
-}
-
-.clients-divider{
-  display:flex;
-  justify-content:center;
-  margin-bottom:20px;
-}
-
-.clients-divider span{
-  width:60px;
-  height:2px;
-  background:#568206;
-  position:relative;
-}
-
-.clients-divider span::before,
-.clients-divider span::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  width:40px;
-  height:1px;
-  background:#555;
-}
-
-.clients-divider span::before{left:-45px}
-.clients-divider span::after{right:-45px}
-
-.client-logos{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-
-.client-logos img{
-  max-height:50px;
-  filter:grayscale(100%);
-  opacity:.85;
-  transition:.3s;
-}
-
-.client-logos img:hover{
-  filter:none;
-  opacity:1;
-  transform:scale(1.05);
-}
-
-/* CONTACT LINE */
-.contact-line{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid rgba(255,255,255,.15);
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  font-size:19px;
-  letter-spacing:1.5px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <video autoplay loop muted playsinline>
-    <source src="Aurelia Heights Short 4k_1.mp4" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen>
-  </video>
-
-  <div class="overlay">
-    <div class="bottom-bar">
-      <div class="logo">VIZLABS</div>
-      <div class="social">
-        <a href="mailto:contact@thevizlabs.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/viz.labs" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com/@TheVIZLABS" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery">
-  <div class="vertical-columns">
-    <!-- Column 1 -->
-    <img src="1.png">
-    <img src="6.png">
-    <img src="8.png">
-
-    <!-- Column 2 -->
-    <img src="2.png">
-    <img src="7.png">
-    <img src="5.png">
-    <img src="4.png">
-
-    <!-- Column 3 -->
-    <img src="3.png">
-    <img src="9.png">
-    <img src="nvr6.png">
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section class="clients-section">
-  <h2>Our Clients</h2>
-  <div class="clients-divider"><span></span></div>
-
-  <div class="client-logos">
-    <img src="L1.png">
-    <img src="L2.jpeg">
-    <img src="L3.png">
-    <img src="L4.jpeg">
-    <img src="L5.jpeg">
-  
-  </div>
-<br>
-  <div class="contact-line">
-    <span>"A DECADE OF EXCELLENCE IN ARCHITECTURAL VISUALIZATION"</span>
-  </div>
-<br>
-  
-    
-   
-    <span><i class="fas fa-envelope">  </i>  contact@thevizlabs.com</span>
-     <br>
-     <br>
-    <span><i class="fas fa-phone">  </i>  +91 97910 67559</span>
-    
-  </div>
-</section>
-
-</body>
-</html>
-
-
-
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -279,7 +8,9 @@ body{background:#000;color:#fff;}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -405,6 +136,7 @@ body{background:#000;color:#fff;}
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -444,7 +176,7 @@ body{background:#000;color:#fff;}
       display: flex;
       align-items: flex-end;
       padding: clamp(20px, 4vw, 80px);
-      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
     }
 
     /* BOTTOM BAR */
@@ -585,10 +317,13 @@ body{background:#000;color:#fff;}
     }
 
     @keyframes scrollWheel {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
+
       50% {
         opacity: 0.2;
         transform: translateX(-50%) translateY(12px);
@@ -647,16 +382,45 @@ body{background:#000;color:#fff;}
       transform: translateY(0) scale(1);
     }
 
-    .gallery-item:nth-child(1) { transition-delay: 0.05s; }
-    .gallery-item:nth-child(2) { transition-delay: 0.1s; }
-    .gallery-item:nth-child(3) { transition-delay: 0.15s; }
-    .gallery-item:nth-child(4) { transition-delay: 0.08s; }
-    .gallery-item:nth-child(5) { transition-delay: 0.13s; }
-    .gallery-item:nth-child(6) { transition-delay: 0.18s; }
-    .gallery-item:nth-child(7) { transition-delay: 0.23s; }
-    .gallery-item:nth-child(8) { transition-delay: 0.11s; }
-    .gallery-item:nth-child(9) { transition-delay: 0.16s; }
-    .gallery-item:nth-child(10) { transition-delay: 0.21s; }
+    .gallery-item:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    .gallery-item:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .gallery-item:nth-child(3) {
+      transition-delay: 0.15s;
+    }
+
+    .gallery-item:nth-child(4) {
+      transition-delay: 0.08s;
+    }
+
+    .gallery-item:nth-child(5) {
+      transition-delay: 0.13s;
+    }
+
+    .gallery-item:nth-child(6) {
+      transition-delay: 0.18s;
+    }
+
+    .gallery-item:nth-child(7) {
+      transition-delay: 0.23s;
+    }
+
+    .gallery-item:nth-child(8) {
+      transition-delay: 0.11s;
+    }
+
+    .gallery-item:nth-child(9) {
+      transition-delay: 0.16s;
+    }
+
+    .gallery-item:nth-child(10) {
+      transition-delay: 0.21s;
+    }
 
     .image-wrapper {
       position: relative;
@@ -671,10 +435,6 @@ body{background:#000;color:#fff;}
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, 
-        rgba(86, 130, 6, 0) 0%, 
-        rgba(86, 130, 6, 0.3) 50%, 
-        rgba(127, 184, 10, 0.4) 100%);
       opacity: 0;
       transition: opacity 0.6s ease;
       z-index: 1;
@@ -684,7 +444,6 @@ body{background:#000;color:#fff;}
       content: '';
       position: absolute;
       inset: -2px;
-      background: linear-gradient(135deg, #568206, #7fb80a);
       opacity: 0;
       transition: opacity 0.6s ease;
       z-index: -1;
@@ -692,7 +451,6 @@ body{background:#000;color:#fff;}
     }
 
     .image-wrapper:hover {
-      box-shadow: 0 20px 60px rgba(86, 130, 6, 0.3), 0 0 40px rgba(86, 130, 6, 0.2);
       transform: translateY(-8px);
     }
 
@@ -827,7 +585,7 @@ body{background:#000;color:#fff;}
     }
 
     .client-logo-wrapper {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(30px);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -837,17 +595,31 @@ body{background:#000;color:#fff;}
       transform: translateY(0);
     }
 
-    .client-logo-wrapper:nth-child(1) { transition-delay: 0.1s; }
-    .client-logo-wrapper:nth-child(2) { transition-delay: 0.2s; }
-    .client-logo-wrapper:nth-child(3) { transition-delay: 0.3s; }
-    .client-logo-wrapper:nth-child(4) { transition-delay: 0.4s; }
-    .client-logo-wrapper:nth-child(5) { transition-delay: 0.5s; }
+    .client-logo-wrapper:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .client-logo-wrapper:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .client-logo-wrapper:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .client-logo-wrapper:nth-child(4) {
+      transition-delay: 0.4s;
+    }
+
+    .client-logo-wrapper:nth-child(5) {
+      transition-delay: 0.5s;
+    }
 
     .client-logos img {
       max-height: 50px;
-      opacity: 0.75;
+      opacity: 1;
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: brightness(0.9);
+      filter: brightness(1.1);
     }
 
     .client-logos img:hover {
@@ -964,6 +736,18 @@ body{background:#000;color:#fff;}
       border: 2px solid rgba(255, 255, 255, 0.1);
     }
 
+    .contact-mid-line {
+      width: 70%;
+      height: 2px;
+      margin: clamp(50px, 6vw, 80px) auto;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(86, 130, 6, 0.45),
+          transparent);
+      box-shadow: 0 0 18px rgba(86, 130, 6, 0.35);
+    }
+
+
     .back-to-top::before {
       content: '';
       position: absolute;
@@ -1012,7 +796,8 @@ body{background:#000;color:#fff;}
         object-position: center;
         object-fit: contain;
       }
-      .bottom-bar{
+
+      .bottom-bar {
         flex-direction: column;
         gap: 20px;
         size: 0cap;
@@ -1108,9 +893,12 @@ body{background:#000;color:#fff;}
         <div class="logo">VIZLABS</div>
         <div class="social">
           <a href="mailto:contact@thevizlabs.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.instagram.com/viz.labs" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.youtube.com/@TheVIZLABS" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/viz.labs" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@TheVIZLABS" target="_blank" rel="noopener" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -1240,7 +1028,7 @@ body{background:#000;color:#fff;}
         </div>
       </div>
     </section>
-
+    <div class="contact-mid-line"></div>
     <section class="clients-section3">
       <h3>Contact Us</h3>
       <div class="clients-divider"><span></span></div>
@@ -1343,21 +1131,21 @@ body{background:#000;color:#fff;}
     // PARALLAX EFFECT ON HERO
     // ========================
     let ticking = false;
-    
+
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrolled = window.scrollY;
           const heroVideo = document.querySelector('.hero video');
-          
+
           if (heroVideo && scrolled < window.innerHeight) {
             heroVideo.style.transform = `scale(${1 + scrolled * 0.0001}) translateY(${scrolled * 0.4}px)`;
             heroVideo.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
           }
-          
+
           ticking = false;
         });
-        
+
         ticking = true;
       }
     });
@@ -1366,7 +1154,7 @@ body{background:#000;color:#fff;}
     // SCROLL INDICATOR HIDE
     // ========================
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 150) {
         scrollIndicator.style.opacity = '0';
@@ -1386,4 +1174,3 @@ body{background:#000;color:#fff;}
 </body>
 
 </html>
->>>>>>> 4215f571fc7eaccf77380e4e2bf48e821d60ffaf
