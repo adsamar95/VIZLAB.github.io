@@ -28,6 +28,17 @@
       color: #fff;
     }
 
+    /* HIDE SCROLLBAR */
+    html {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    html::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
     /* HERO */
     .hero {
       position: relative;
