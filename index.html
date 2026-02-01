@@ -27,14 +27,16 @@
       -ms-overflow-style: none;
     }
 
-    html::-webkit-scrollbar {
+    body::-webkit-scrollbar {
       display: none;
+      /* Chrome, Safari */
     }
 
     html,
     body {
       height: 100%;
       overflow-x: hidden;
+      overflow-y: scroll;
     }
 
     body {
