@@ -1,268 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VIZLABS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>VIZLABS</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{background:#000;color:#fff;}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-/* HERO */
-.hero{position:relative;height:100vh;overflow:hidden}
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    html,
+    body {
+      height: 100%
+    }
 
-/* OVERLAY */
-.overlay{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:flex-end;
-  padding:clamp(18px,4vw,80px);
-  background:rgba(0,0,0,.35);
-}
+    body {
+      background: #000;
+      color: #fff;
+    }
 
-/* BOTTOM BAR */
-.bottom-bar{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden
+    }
 
-/* LOGO */
-.logo{
-  font-size:clamp(26px,4vw,45px);
-  letter-spacing:4px;
-  font-weight:300;
-}
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-/* SOCIAL */
-.social{
-  display:flex;
-  gap:clamp(10px,2vw,18px);
-}
-.social a{
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.3);
-  background:rgba(0,0,0,.5);
-  text-decoration:none;
-  transition:.25s;
-}
-.social a:hover{
-  background:#fff;
-  color:#000;
-  transform:scale(1.1);
-}
+    /* OVERLAY */
+    .overlay {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(18px, 4vw, 80px);
+      background: rgba(0, 0, 0, .35);
+    }
 
-/* =============================== */
-/* VERTICAL COLUMN GALLERY         */
-/* =============================== */
-.gallery{
-  padding:clamp(40px,3vw,80px);
-  background:#000;
-}
+    /* BOTTOM BAR */
+    .bottom-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.vertical-columns {
-  column-count: 3; /* Number of columns */
-  column-gap: 20px; /* Space between columns */
-}
+    /* LOGO */
+    .logo {
+      font-size: clamp(26px, 4vw, 45px);
+      letter-spacing: 4px;
+      font-weight: 300;
+    }
 
-.vertical-columns img {
-  width: 100%;
-  display: block;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  transition: transform .35s ease, filter .25s ease;
-  cursor: pointer;
-}
+    /* SOCIAL */
+    .social {
+      display: flex;
+      gap: clamp(10px, 2vw, 18px);
+    }
 
-.vertical-columns img:hover {
-  transform: scale(1.04);
-  filter: brightness(1.1);
-}
+    .social a {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: rgba(0, 0, 0, .5);
+      text-decoration: none;
+      transition: .25s;
+    }
 
-/* RESPONSIVE */
-@media(max-width:1200px){
-  .vertical-columns { column-count: 3; }
-}
-@media(max-width:768px){
-  .vertical-columns { column-count: 2; }
-}
-@media(max-width:480px){
-  .vertical-columns { column-count: 1; }
-}
+    .social a:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.1);
+    }
 
-/* ========================= */
-/* CLIENTS SECTION */
-/* ========================= */
-.clients-section{
-  padding:20px 20px;
-  background:#000;
-  text-align:center;
-  letter-spacing:1px;
-}
+    /* =============================== */
+    /* VERTICAL COLUMN GALLERY         */
+    /* =============================== */
+    .gallery {
+      padding: clamp(40px, 3vw, 80px);
+      background: #000;
+    }
 
-.clients-section h2{
-  font-size:28px;
-  font-weight:300;
-  letter-spacing: 2px;
-  margin-bottom:12px;
- 
-}
+    .vertical-columns {
+      column-count: 3;
+      /* Number of columns */
+      column-gap: 20px;
+      /* Space between columns */
+    }
 
-.clients-divider{
-  display:flex;
-  justify-content:center;
-  margin-bottom:20px;
-}
+    .vertical-columns img {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      transition: transform .35s ease, filter .25s ease;
+      cursor: pointer;
+    }
 
-.clients-divider span{
-  width:60px;
-  height:2px;
-  background:#568206;
-  position:relative;
-}
+    .vertical-columns img:hover {
+      transform: scale(1.04);
+      filter: brightness(1.1);
+    }
 
-.clients-divider span::before,
-.clients-divider span::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  width:40px;
-  height:1px;
-  background:#555;
-}
+    /* RESPONSIVE */
+    @media(max-width:1200px) {
+      .vertical-columns {
+        column-count: 3;
+      }
+    }
 
-.clients-divider span::before{left:-45px}
-.clients-divider span::after{right:-45px}
+    @media(max-width:768px) {
+      .hero video {
+        object-position: center;
+        object-fit: contain;
+      }
 
-.client-logos{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
+      .vertical-columns {
+        column-count: 2;
+      }
+    }
 
-.client-logos img{
-  max-height:50px;
-  filter:grayscale(100%);
-  opacity:.85;
-  transition:.3s;
-}
+    @media(max-width:480px) {
+      .vertical-columns {
+        column-count: 1;
+      }
+    }
 
-.client-logos img:hover{
-  filter:none;
-  opacity:1;
-  transform:scale(1.05);
+    /* ========================= */
+    /* CLIENTS SECTION */
+    /* ========================= */
+    
+    .clients-section {
+      padding: 20px 20px;
+      background: #000;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .clients-section h2 {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+
+    }
+    .clients-section3 h3 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-/* CONTACT LINE */
-.contact-line{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid rgba(255,255,255,.15);
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  font-size:19px;
-  letter-spacing:1.5px;
-}
-</style>
+    .clients-divider {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .clients-divider span {
+      width: 60px;
+      height: 2px;
+      background: #568206;
+      position: relative;
+    }
+
+    .clients-divider span::before,
+    .clients-divider span::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 1px;
+      background: #555;
+    }
+
+    .clients-divider span::before {
+      left: -45px
+    }
+
+    .clients-divider span::after {
+      right: -45px
+    }
+
+    .client-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .client-logos img {
+      max-height: 40px;
+      opacity: .85;
+      transition: .3s;
+    }
+
+    .client-logos img:hover {
+      filter: none;
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* CONTACT LINE */
+    .contact-line {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-size: 19px;
+      letter-spacing: 1.5px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <video autoplay loop muted playsinline>
-    <source src="Aurelia Heights Short 4k_1.mp4" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen>
-  </video>
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay loop muted playsinline>
+      <source src="Aurelia Heights Short 4k_1.mp4" width="640" height="360" frameborder="0"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen>
+    </video>
 
-  <div class="overlay">
-    <div class="bottom-bar">
-      <div class="logo">VIZLABS</div>
-      <div class="social">
-        <a href="mailto:contact@thevizlabs.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/viz.labs" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com/@TheVIZLABS" target="_blank"><i class="fab fa-youtube"></i></a>
+    <div class="overlay">
+      <div class="bottom-bar">
+        <div class="logo">VIZLABS</div>
+        <div class="social">
+          <a href="mailto:contact@thevizlabs.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/viz.labs" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@TheVIZLABS" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-  <div class="vertical-columns">
-    <!-- Column 1 -->
-    <img src="1.png">
-    <img src="6.png">
-    <img src="8.png">
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="vertical-columns">
+      <!-- Column 1 -->
+      <img src="1.png">
+      <img src="6.png">
+      <img src="8.png">
 
-    <!-- Column 2 -->
-    <img src="2.png">
-    <img src="7.png">
-    <img src="5.png">
-    <img src="4.png">
+      <!-- Column 2 -->
+      <img src="2.png">
+      <img src="7.png">
+      <img src="5.png">
+      <img src="4.png">
 
-    <!-- Column 3 -->
-    <img src="3.png">
-    <img src="9.png">
-    <img src="nvr6.png">
-  </div>
-</section>
+      <!-- Column 3 -->
+      <img src="3.png">
+      <img src="9.png">
+      <img src="nvr6.png">
+    </div>
+  </section>
 
-<!-- CLIENTS -->
-<section class="clients-section">
-  <h2>Our Clients</h2>
-  <div class="clients-divider"><span></span></div>
-
-  <div class="client-logos">
-    <img src="L1.png">
-    <img src="L2.jpeg">
-    <img src="L3.png">
-    <img src="L4.jpeg">
-    <img src="L5.jpeg">
-  
-  </div>
-<br>
+  <!-- CLIENTS -->
   <div class="contact-line">
-    <span>"A DECADE OF EXCELLENCE IN ARCHITECTURAL VISUALIZATION"</span>
-  </div>
+      <section class="clients-section">
+    <h2>Our Clients</h2>
+    <div class="clients-divider"><span></span></div>
+    </div>
+
+    <div class="client-logos">
+      <img src="L1.png">
+      <img src="L2.jpeg">
+      <img src="L3.png">
+      <img src="L4.jpeg">
+      <img src="L5.jpeg">
+
+    </div>
+    <br>
+    <div class="contact-line">
+      <section class="clients-section3">
+    <h3>Contact Us</h3>
+    <div class="clients-divider"><span></span></div>
+    </div>
+
+   <center>
+  <span>
+    <i class="fas fa-envelope"></i> contact@thevizlabs.com
+  </span>
+  <br><br>
+  <span>
+    <i class="fas fa-phone"></i> +91 97910 67559
+  </span>
+</center>
+
 <br>
-  
-    
-   
-    <span><i class="fas fa-envelope">  </i>  contact@thevizlabs.com</span>
-     <br>
-     <br>
-    <span><i class="fas fa-phone">  </i>  +91 97910 67559</span>
-    
-  </div>
-</section>
+<br>
+
+    </div>
+  </section>
 
 </body>
+
 </html>
-
-
