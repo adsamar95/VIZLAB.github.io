@@ -28,6 +28,17 @@
       color: #fff;
     }
 
+    /* HIDE SCROLLBAR */
+    html {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    html::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
     /* HERO */
     .hero {
       position: relative;
@@ -247,10 +258,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video autoplay loop muted playsinline>
-      <source src="Aurelia Heights Short 4k_1.mp4" width="640" height="360" frameborder="0"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen>
+    <video autoplay loop muted playsinline webkit-playsinline>
+      <source src="Aurelia Heights Short 4k_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
 
     <div class="overlay">
@@ -271,20 +281,20 @@
   <section class="gallery">
     <div class="vertical-columns">
       <!-- Column 1 -->
-      <img src="1.png">
-      <img src="6.png">
-      <img src="8.png">
+      <img src="1.png" alt="Project 1">
+      <img src="6.png" alt="Project 6">
+      <img src="8.png" alt="Project 8">
 
       <!-- Column 2 -->
-      <img src="2.png">
-      <img src="7.png">
-      <img src="5.png">
-      <img src="4.png">
+      <img src="2.png" alt="Project 2">
+      <img src="7.png" alt="Project 7">
+      <img src="5.png" alt="Project 5">
+      <img src="4.png" alt="Project 4">
 
       <!-- Column 3 -->
-      <img src="3.png">
-      <img src="9.png">
-      <img src="nvr6.png">
+      <img src="3.png" alt="Project 3">
+      <img src="9.png" alt="Project 9">
+      <img src="nvr6.png" alt="Project NVR6">
     </div>
   </section>
 
@@ -296,11 +306,11 @@
   </div>
 
   <div class="client-logos">
-    <img src="L1.png">
-    <img src="L2.jpeg">
-    <img src="L3.png">
-    <img src="L4.jpeg">
-    <img src="L5.jpeg">
+    <img src="L1.png" alt="Client 1">
+    <img src="L2.jpeg" alt="Client 2">
+    <img src="L3.png" alt="Client 3">
+    <img src="L4.jpeg" alt="Client 4">
+    <img src="L5.jpeg" alt="Client 5">
 
   </div>
   <br>
