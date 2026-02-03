@@ -178,7 +178,7 @@
       display: flex;
       align-items: flex-end;
       padding: clamp(20px, 4vw, 80px);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.80) 100%);
     }
 
     /* BOTTOM BAR */
@@ -496,6 +496,8 @@
       transform: scale(0.6) rotate(-10deg);
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
+      display: none !important;
+
     }
 
     .image-wrapper:hover .image-overlay i {
@@ -581,7 +583,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: clamp(35px, 5vw, 70px);
+      gap: clamp(0px, 5vw, 70px);
       flex-wrap: wrap;
       margin-bottom: 70px;
     }
@@ -807,7 +809,7 @@
 
       .overlay {
         height: 95%;
-        background: rgba(0, 0, 0, .55);
+        background: rgba(0, 0, 0, .15);
       }
 
       .vertical-columns {
@@ -885,8 +887,8 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <video autoplay loop muted playsinline webkit-playsinline>
-      <source src="Aurelia Heights Short 4k_1.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline preload="auto" webkit-playsinline x-webkit-airplay="allow">
+      <source src="aurelia_heights.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
@@ -894,9 +896,7 @@
       <div class="bottom-bar">
         <div class="logo">VIZLABS</div>
         <div class="social">
-         <a href="https://wa.me/919791067559" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+          <a href="mailto:contact@thevizlabs.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
           <a href="https://www.instagram.com/viz.labs" target="_blank" rel="noopener" aria-label="Instagram"><i
               class="fab fa-instagram"></i></a>
           <a href="https://www.linkedin.com/in/architectamarnath/" target="_blank" rel="noopener"
@@ -1037,43 +1037,18 @@
       <h3>Contact Us</h3>
       <div class="clients-divider"><span></span></div>
 
-    <div class="contact-info">
-
-  <div class="contact-item">
-    <a href="tel:+919791067559"
-       style="color: inherit; text-decoration: none;"
-       onmouseover="this.style.color='rgba(86, 130, 6, 0.6)'"
-       onmouseout="this.style.color='inherit'">
-      <i class="fas fa-phone"></i>
-      +91 97910 67559
-    </a>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>contact@thevizlabs.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 97910 67559</span>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <div class="contact-item">
-    <a href="mailto:contact@thevizlabs.com"
-       style="color: inherit; text-decoration: none;"
-       onmouseover="this.style.color='rgba(86, 130, 6, 0.6)'"
-       onmouseout="this.style.color='inherit'">
-      <i class="fas fa-envelope"></i>
-      contact@thevizlabs.com
-    </a>
-  </div>
-
-  <div class="contact-item">
-    <a href="https://www.google.com/maps?q=6,+Mico+Layout,+Hongasandra,+Bangalore"
-       target="_blank"
-       style="color: inherit; text-decoration: none;"
-       onmouseover="this.style.color='rgba(86, 130, 6, 0.6)'"
-       onmouseout="this.style.color='inherit'">
-      <i class="fas fa-map-marker-alt"></i>
-      6, Mico Layout, Hongasandra, Bangalore
-    </a>
-  </div>
-
-</div>
-
-
-</div>
 
   <!-- BACK TO TOP BUTTON -->
   <div class="back-to-top" id="backToTop">
@@ -1082,13 +1057,42 @@
 
   <script>
     // ========================
-    // LOADING SCREEN
+    // SAFARI VIDEO AUTOPLAY FIX
     // ========================
     window.addEventListener('load', () => {
+      const video = document.querySelector('.hero video');
+      
+      // Force play on Safari
+      if (video) {
+        video.play().catch(err => {
+          console.log('Autoplay prevented:', err);
+          // If autoplay fails, try again after user interaction
+          document.addEventListener('click', () => {
+            video.play();
+          }, { once: true });
+        });
+      }
+
+      // Loading screen fade out
       setTimeout(() => {
         document.querySelector('.loader-wrapper').classList.add('fade-out');
       }, 2400);
     });
+
+    // Additional Safari fix - ensure video plays when visible
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        }
+      });
+    });
+
+    const heroVideo = document.querySelector('.hero video');
+    if (heroVideo) {
+      videoObserver.observe(heroVideo);
+    }
 
     // ========================
     // SCROLL ANIMATIONS
@@ -1165,11 +1169,11 @@
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrolled = window.scrollY;
-          const heroVideo = document.querySelector('.hero video');
+          const heroVideoEl = document.querySelector('.hero video');
 
-          if (heroVideo && scrolled < window.innerHeight) {
-            heroVideo.style.transform = `scale(${1 + scrolled * 0.0001}) translateY(${scrolled * 0.4}px)`;
-            heroVideo.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
+          if (heroVideoEl && scrolled < window.innerHeight) {
+            heroVideoEl.style.transform = `scale(${1 + scrolled * 0.0001}) translateY(${scrolled * 0.4}px)`;
+            heroVideoEl.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
           }
 
           ticking = false;
